@@ -15,7 +15,7 @@ fn main() {
     loop {
         println!("!***************************!");
         println!(
-            "type: 'l' to view current list\ntype: 'a' to add new item\ntype: 'exit' to exit. "
+            "\ttype: 'l' to view current list\n\ttype: 'a' to add new item\n\ttype: 'exit' to exit. "
         );
         let mut command = String::new();
         io::stdin()
@@ -52,9 +52,12 @@ fn create_entry(input: &str) -> ListEntry {
 }
 
 fn print_list(to_do_list: &Vec<ListEntry>) {
-    println!("To-Do List:");
+    println!("To-Do List:\n");
     for item in to_do_list {
         let (element_priority, element_task) = (item.priority, item.entry_text.clone());
-        println!("Priority: {0}\tTask: {1}", element_priority, element_task);
+        println!(
+            "--\tPriority: {0}\tTask: {1}",
+            element_priority, element_task
+        );
     }
 }
