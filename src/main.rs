@@ -13,16 +13,12 @@ struct ListEntry {
 }
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
-    // Vector of structs that is our dynamic to do list.
-
     let existing_to_do_list = read_from_json();
     //.expect("must have a 'to_do_list.json in root directory");
     let mut to_do_list = match existing_to_do_list {
         Ok(list) => list,
         Err(_) => Vec::new(),
     };
-
-    //let mut to_do_list: Vec<ListEntry> = Vec::new();
 
     println!("Hello! Welcome to your To-Do list!");
     loop {
