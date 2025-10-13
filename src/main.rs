@@ -28,6 +28,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     loop {
         println!("\ttype: 'l' to view current list");
         println!("\ttype: 'a' to add new item");
+        println!("\ttype: 'd' to remove item");
         println!("\ttype: 's' to save list");
         println!("\ttype: 'exit' to exit");
 
