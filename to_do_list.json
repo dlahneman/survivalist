@@ -28,5 +28,10 @@
     "number": 5,
     "priority": 1,
     "entry_text": "write tests for the terminal todo list\n"
+  },
+  {
+    "number": 6,
+    "priority": 1,
+    "entry_text": "add a way to prioritize items.\n"
   }
 ]
