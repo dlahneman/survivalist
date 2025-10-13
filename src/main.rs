@@ -1,13 +1,16 @@
+use serde::{Deserialize, Serialize};
+use serde_json;
+use std::fs;
 use std::io;
 
 // the entries in our todo list are stored in the ToDo struct.
-#[derive(Debug)]
+#[derive(Serialize, Deserialize)]
 struct ListEntry {
     priority: u32,
     entry_text: String,
 }
 
-fn main() {
+fn main() -> Result<(), Box<dyn std::error::Error>> {
     // Vector of structs that is our dynamic to do list.
     let mut to_do_list: Vec<ListEntry> = Vec::new();
 
@@ -15,7 +18,7 @@ fn main() {
     loop {
         println!("!***************************!");
         println!(
-            "\ttype: 'l' to view current list\n\ttype: 'a' to add new item\n\ttype: 'exit' to exit. "
+            "\ttype: 'l' to view current list\n\ttype: 'a' to add new item\n\ttype: 'exit' to exit."
         );
         let mut command = String::new();
         io::stdin()
@@ -31,10 +34,13 @@ fn main() {
             print_list(&to_do_list);
         } else if command_char == "l" {
             print_list(&to_do_list);
+        } else if command_char == "s" {
+            save_to_json(&to_do_list)?;
         } else if command_char == "exit" {
-            std::process::exit(1);
+            break;
         }
     }
+    Ok(())
 }
 
 fn create_entry(input: &str) -> ListEntry {
@@ -60,4 +66,13 @@ fn print_list(to_do_list: &Vec<ListEntry>) {
             element_priority, element_task
         );
     }
+}
+
+fn save_to_json(to_do_list: &Vec<ListEntry>) -> Result<(), Box<dyn std::error::Error>> {
+    // Serialize the vector to a JSON string
+    let json_string = serde_json::to_string_pretty(&to_do_list)?;
+
+    // Save the JSON string to a file
+    fs::write("to_do_list.json", json_string)?;
+    Ok(())
 }
