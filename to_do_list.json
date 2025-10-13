@@ -1,1 +1,32 @@
-[]
+[
+  {
+    "number": 0,
+    "priority": 1,
+    "entry_text": "Review Keysight Tolerances for Collimator\n"
+  },
+  {
+    "number": 1,
+    "priority": 1,
+    "entry_text": "push this project to github.\n"
+  },
+  {
+    "number": 2,
+    "priority": 1,
+    "entry_text": "return Elise's orders so she gets the refund\n"
+  },
+  {
+    "number": 3,
+    "priority": 1,
+    "entry_text": "Resolve the two jobs Drew was asking about.\n"
+  },
+  {
+    "number": 4,
+    "priority": 1,
+    "entry_text": "Create wiring diagram between controller and VFT curing stage.\n"
+  },
+  {
+    "number": 5,
+    "priority": 1,
+    "entry_text": "write tests for the terminal todo list\n"
+  }
+]

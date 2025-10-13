@@ -99,7 +99,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "term-todo"
+name = "term_todo"
 version = "0.1.0"
 dependencies = [
  "colorize",
