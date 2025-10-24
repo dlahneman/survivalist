@@ -88,6 +88,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "survivalist"
+version = "0.1.0"
+dependencies = [
+ "colorize",
+ "serde",
+ "serde_json",
+]
+
+[[package]]
 name = "syn"
 version = "2.0.106"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -96,15 +105,6 @@ dependencies = [
  "proc-macro2",
  "quote",
  "unicode-ident",
-]
-
-[[package]]
-name = "term_todo"
-version = "0.1.0"
-dependencies = [
- "colorize",
- "serde",
- "serde_json",
 ]
 
 [[package]]

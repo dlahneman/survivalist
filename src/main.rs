@@ -1,5 +1,5 @@
 use std::io;
-use term_todo::*;
+use survivalist::*;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let existing_to_do_list = read_from_json();
@@ -37,5 +37,5 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             break;
         }
     }
-    Ok(())
+    Ok(()) // allows the exit to Result type for error propagation.
 }
